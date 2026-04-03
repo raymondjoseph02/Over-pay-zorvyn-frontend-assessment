@@ -19,7 +19,7 @@ export const PaymentMethodCard = ({
   return (
     <button
       onClick={onSelect}
-      className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-2xl border transition-colors text-left cursor-pointer ${
+      className={`flex-1 flex items-center gap-2 justify-between px-4 py-3.5 rounded-2xl border transition-colors text-left cursor-pointer ${
         selected
           ? "border-primary-500 dark:bg-gray-800/60 bg-gray-50"
           : "border-gray-200 dark:border-gray-700 dark:bg-gray-800/30 bg-white"

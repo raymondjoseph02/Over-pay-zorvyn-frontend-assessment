@@ -85,6 +85,10 @@ export interface WalletActionProps {
   action: WalletAction;
 }
 
+export interface SendMoneyModalProps {
+  onClose: () => void;
+}
+
 export interface ActivitiesProps {
   title: string;
   description: string;

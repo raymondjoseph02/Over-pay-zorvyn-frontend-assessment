@@ -1,7 +1,7 @@
 import { useModal } from "../../hooks/useModal";
 import type { WalletActionProps } from "../../types/interface";
 import { walletIcon } from "../../utility/iconMapper";
-import { SendMoneyModal } from "../global-ui/Modal";
+import { SendMoneyModal } from "../modals/SendMoneyModal";
 
 export const WalletAction = ({ name, icon, action }: WalletActionProps) => {
   const Icon = walletIcon[icon];
@@ -49,11 +49,11 @@ export const WalletAction = ({ name, icon, action }: WalletActionProps) => {
     <>
       <button onClick={handleClick} className="space-y-4 group cursor-pointer ">
         <div
-          className={` ${iconColor()}  dark:group-hover:bg-gray-700 transition ease-in-out duration-300 dark:bg-gray-800 rounded-xl  px-4 pb-3.5 pt-4.75 border border-gray-200 dark:border-transparent`}
+          className={` ${iconColor()} group-hover:bg-gray-100 dark:group-hover:bg-gray-700 group-hover:border-gray-300 dark:group-hover:border-transparent group-hover:scale-105 transition-all ease-in-out duration-300 dark:bg-gray-800 rounded-xl px-4 pb-3.5 pt-4.75 border border-gray-200 dark:border-transparent`}
         >
           <Icon />
         </div>
-        <p className="dark:text-gray-500 text-sm font-medium md:font-medium capitalize text-gray-600">
+        <p className="dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-gray-300 text-sm font-medium md:font-medium capitalize text-gray-600 transition-colors duration-300">
           {name}
         </p>
       </button>
