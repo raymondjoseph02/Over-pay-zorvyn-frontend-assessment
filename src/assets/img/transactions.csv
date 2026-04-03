@@ -1,0 +1,11 @@
+Name,Category,Date,Time,Invoice ID,Amount,Status
+Stripe,Withdraw,Jan 29, 2022,08.00 PM,PMX09812,+$300.00,pending
+Bitcoin transaction,Deposit,Jan 25, 2022,09.15 AM,PMX0979,-$890.15,success
+Facebook charge,Advertising,Jan 25, 2022,06.45 AM,OVF19244,-$600.00,success
+Upwork,Business,Jan 23, 2022,09.00 PM,AMX09871,+$1,243.00,pending
+Send to Antonio,Transfer,Jan 15, 2022,10.15 AM,PMX09873,-$123.00,failed
+UI8.net,Payment,Jan 15, 2022,09.00 AM,AMX89786,-$190.00,success
+Bank of America,Withdraw,Jan 15, 2022,07.00 AM,AMX89785,-$1,565.99,success
+UI8.net,Payment,Jan 11, 2022,09.00 AM,AMX76543,-$10.00,success
+Upwork,Business,Jan 08, 2022,11.30 AM,PMX98765,+$2,400.00,success
+Stripe,Payment,Jan 03, 2022,03.00 PM,PMX11223,-$49.99,pending
