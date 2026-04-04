@@ -43,7 +43,7 @@ export const DashboardPage = () => {
                 <p className="text-sm font-bold text-gray-900 dark:text-gray-50 mb-1">
                   Platform Monthly Spending
                 </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500 mb-3">
+                <p className="text-xs text-gray-600 dark:text-gray-500 mb-3">
                   Overall spending across all accounts
                 </p>
                 <SpendingBarChart history={adminSpendingHistory} />
@@ -55,7 +55,6 @@ export const DashboardPage = () => {
           {loading ? null : <MoneyFlowChart />}
 
           {loading ? <InsightsSkeleton /> : <Insights />}
-
         </div>
 
         {/* Right column */}
