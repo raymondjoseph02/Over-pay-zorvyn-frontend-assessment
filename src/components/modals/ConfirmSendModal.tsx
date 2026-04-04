@@ -8,6 +8,7 @@ import {
   calcConverted,
   calcArrivalDate,
 } from "../../utility/transaction";
+import { useTransactionStore } from "../../store/transactionStore";
 
 interface ConfirmSendModalProps {
   onClose: () => void;
@@ -23,12 +24,30 @@ export const ConfirmSendModal = ({
   selectedContact,
 }: ConfirmSendModalProps) => {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const addTransaction = useTransactionStore((s) => s.addTransaction);
   const numericAmount = Number(amount) || 0;
   const converted = calcConverted(numericAmount);
 
   const handleConfirm = () => {
     setStatus("loading");
-    setTimeout(() => setStatus("success"), 1800);
+    setTimeout(() => {
+      const now = new Date();
+      addTransaction({
+        id: crypto.randomUUID(),
+        name: selectedContact?.name ?? "Unknown",
+        category: "Transfer",
+        date: now.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+        time: now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
+        invoiceId: `INV-${Date.now()}`,
+        amount: `-$${numericAmount.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
+        status: "success",
+        imageUrl: selectedContact?.imageUrl,
+        avatarInitial: selectedContact?.initial,
+        avatarColor: selectedContact?.color,
+        transactionFee: `$${TRANSFER_FEES.toFixed(2)}`,
+      });
+      setStatus("success");
+    }, 1800);
   };
 
   return (
@@ -41,7 +60,7 @@ export const ConfirmSendModal = ({
       </div>
 
       {/* Review content */}
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} mode="wait">
         {(status === "idle" || status === "loading") && (
           <motion.div
             key="review"

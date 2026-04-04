@@ -88,12 +88,12 @@ export const MoneyFlowChart = () => {
   return (
     <div className="py-6 px-4 md:px-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 w-full h-fit">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+      <div className="flex flex-wrap flex-col sm:flex-row md:items-center justify-between gap-3 mb-6 items-start">
         <p className="text-gray-900 font-black text-lg leading-[135%] tracking-[0.2px] dark:text-gray-50">
           Money Flow
         </p>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           {/* Legend */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">

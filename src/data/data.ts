@@ -7,7 +7,6 @@ import type {
   Merchant,
   PaymentMethod,
   WalletActionProps,
-  ProfileDropdownOption,
 } from "../types/type";
 import ui8Logo from "../assets/img/ui8.png";
 import upWorkLogo from "../assets/img/upwork.png";
@@ -463,12 +462,6 @@ export const paymentMethods: PaymentMethod[] = [
 
 export const walletsCta: WalletActionProps[] = [
   { name: "Make Payment", action: "SEND", icon: "send" },
-];
-
-export const profileOptions: ProfileDropdownOption[] = [
-  { name: "Your details", action: "PROFILE", icon: "user" },
-  { name: "Account settings", action: "SETTINGS", icon: "settings" },
-  { name: "Logout", action: "LOGOUT", icon: "logout" },
 ];
 
 export const merchants: Merchant[] = [

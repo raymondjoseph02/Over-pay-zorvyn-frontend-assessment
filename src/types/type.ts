@@ -2,9 +2,7 @@ import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 export type ModalSize = "sm" | "md" | "lg" | "xl" | "full";
 
-export type ProfileAction = "PROFILE" | "SETTINGS" | "LOGOUT";
 
-export type ProfileIcon = "user" | "settings" | "logout";
 export type ButtonVariant = "primary" | "secondary" | "outline";
 export type WalletActionIcon = "send" | "receive" | "invoicing" | "more";
 export type WalletAction = "SEND" | "RECEIVE" | "INVOICING" | "MORE";
@@ -36,11 +34,6 @@ export interface Route {
   adminOnly?: boolean;
   barge?: boolean;
 }
-export interface ProfileDropdownOption {
-  name: string;
-  action: ProfileAction;
-  icon: ProfileIcon;
-}
 
 export interface User {
   id: string;
@@ -53,14 +46,6 @@ export interface User {
 
 export interface DashboardHeaderProps {
   title: string;
-}
-
-export interface ProfileDropdownProps {
-  options: ProfileDropdownOption[];
-  isOpen: boolean;
-  user: User;
-  theme: "light" | "dark";
-  toggleTheme: () => void;
 }
 
 export interface HamburgerProps {

@@ -66,7 +66,7 @@ export const AddTransactionModal = ({ onClose }: AddTransactionModalProps) => {
         </button>
       </div>
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} mode="wait">
         {/* Form */}
         {(submitStatus === "idle" || submitStatus === "loading") && (
           <motion.div
