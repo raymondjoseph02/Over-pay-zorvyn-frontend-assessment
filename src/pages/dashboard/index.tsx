@@ -5,6 +5,7 @@ import {
   SummaryCardsSkeleton,
   Insights,
   InsightsSkeleton,
+  SpendingBreakdown,
 } from "../../components/dashboard";
 import { Header } from "../../components/global-ui";
 import { MoneyFlowChart, SpendingBarChart } from "../../components/charts";
@@ -32,7 +33,7 @@ export const DashboardPage = () => {
         {loading ? <SummaryCardsSkeleton /> : <SummaryCards />}
       </div>
 
-      <div className="flex flex-col-reverse lg:flex-row gap-4 lg:gap-6">
+      <div className="flex flex-col-reverse lg:flex-row gap-4 lg:gap-6 mb-5">
         {/* Left column */}
         <div className="flex flex-col flex-1 min-w-0 gap-6">
           <div className="hidden lg:flex h-fit">
@@ -53,8 +54,6 @@ export const DashboardPage = () => {
             )}
           </div>
           {loading ? null : <MoneyFlowChart />}
-
-          {loading ? <InsightsSkeleton /> : <Insights />}
         </div>
 
         {/* Right column */}
@@ -78,9 +77,10 @@ export const DashboardPage = () => {
           </div>
 
           {loading ? <WalletWidgetSkeleton /> : <WalletWidget />}
-          {loading ? <RecentActivitiesSkeleton /> : <RecentActivities />}
+          {loading ? null : <SpendingBreakdown />}
         </div>
       </div>
+      {loading ? <InsightsSkeleton /> : <Insights />}
     </>
   );
 };
