@@ -3,6 +3,7 @@ import { isIncome } from "../../utility/transaction";
 import { getStatChartColor } from "../../utility/statistics";
 import { StatisticsEmpty } from "../global-ui";
 import { useTheme } from "../../context/ThemeContext";
+import { StatisticsChart } from "../charts/StatisticsChart";
 
 const parseAmount = (amount: string) =>
   parseFloat(amount.replace(/[^0-9.]/g, "")) || 0;
